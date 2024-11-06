@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need a Cure? NFT Collection</title>
+    <link rel="stylesheet" href="ui.css">
+
+    <!-- Load ethers.js first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+
+    <!-- Load Web3Modal and Thirdweb SDK after ethers.js -->
+    <script src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script src="https://unpkg.com/@thirdweb-dev/sdk/dist/browser/index.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the "Need a Cure?" NFT Collection</h1>
+        <button id="connectWallet" class="tw-connected-wallet" onclick="connectWallet()">
+            <img id="walletIcon" class="wallet-icon" src="" alt="" hidden>
+            <div id="walletInfo">
+                <span id="walletAddress" class="wallet-address">Connect Wallet</span>
+                <span id="walletBalance" class="wallet-balance" hidden></span>
+            </div>
+        </button>
+    </div>
+
+    <div class="nft-container">
+        <!-- NFT Cards -->
+        <div class="nft-card">
+            <img src="bodoggo.png" alt="NFT 1" width="100%">
+            <h3>merheb</h3>
+            <p>just a doggo</p>
+            <button class="mint-button" onclick="mintNFT(0)">Mint NFT</button>
+        </div>
+        <div class="nft-card">
+            <img src="absdoggo.png" alt="NFT 2" width="100%">
+            <h3>doggo wif hat</h3>
+            <p>Sold Out</p>
+            <button class="mint-button" disabled>Sold Out</button>
+        </div>
+        <div class="nft-card">
+            <img src="cure.png" alt="NFT 3" width="100%">
+            <h3>cure</h3>
+            <p>Sold Out</p>
+            <button class="mint-button" disabled>Sold Out</button>
+        </div>
+        <div class="nft-card">
+            <img src="gibwl.JPG" alt="NFT 4" width="100%">
+            <h3>doggo wif hat</h3>
+            <p>Sold Out</p>
+            <button class="mint-button" disabled>Sold Out</button>
+        </div>
+    </div>
+
+    <!-- Your custom JavaScript file should load last -->
+    <script src="script.js"></script>
+</body>
+</html>

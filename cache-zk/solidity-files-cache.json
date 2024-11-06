@@ -1,0 +1,61 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/Georgesmerheb/my-abstract-project/contracts/HelloAbstract.sol": {
+      "lastModificationDate": 1729038212116,
+      "contentHash": "afbe232c6e400b6c938139192013be95",
+      "sourceName": "contracts/HelloAbstract.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": true,
+            "mode": "3"
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "detectMissingLibraries": false,
+          "forceEVMLA": false,
+          "enableEraVMExtensions": true,
+          "libraries": {}
+        },
+        "eraVersion": "1.0.1",
+        "zksolc": {
+          "version": "1.5.6",
+          "compilerSource": "binary",
+          "settings": {
+            "optimizer": {
+              "enabled": true,
+              "mode": "3"
+            },
+            "compilerPath": "/Users/Georgesmerheb/Library/Caches/hardhat-nodejs/compilers-v2/zksolc/zksolc-v1.5.6",
+            "missingLibrariesPath": "./.zksolc-libraries-cache/missingLibraryDependencies.json",
+            "areLibrariesMissing": false,
+            "experimental": {},
+            "enableEraVMExtensions": true,
+            "libraries": {},
+            "forceEVMLA": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "HelloAbstract"
+      ]
+    }
+  }
+}

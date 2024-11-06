@@ -1,0 +1,30 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/HelloAbstract.sol:HelloAbstract": {
+        "src": "contracts/HelloAbstract.sol:4",
+        "version": {
+          "withMetadata": "ae166cce4fb2059c356aa61c4b2c683b36177a2f2d22f7332149ab056bfc17c6",
+          "withoutMetadata": "ae166cce4fb2059c356aa61c4b2c683b36177a2f2d22f7332149ab056bfc17c6",
+          "linkedWithoutMetadata": "ae166cce4fb2059c356aa61c4b2c683b36177a2f2d22f7332149ab056bfc17c6"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "sayHello()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    }
+  ]
+}
