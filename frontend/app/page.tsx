@@ -5,9 +5,9 @@ import { createThirdwebClient } from "thirdweb";
 import { ConnectButton } from "thirdweb/react";
 import { createWallet, inAppWallet } from "thirdweb/wallets";
 import { useActiveAccount } from "thirdweb/react";
-import { getContract } from "thirdweb";
-import { sepolia } from "thirdweb/chains";
-
+import { getContract, sendTransaction } from "thirdweb";
+import { abstractTestnet } from "thirdweb/chains";
+import { mintTo } from "thirdweb/extensions/erc1155";
 
 
 //@ts-expect-error: Should expect error
@@ -24,7 +24,7 @@ export default function Home() {
 
   const account = useActiveAccount();
 
-  async function mintNFT(tokenId : number) {
+  async function mintNFT() {
     if (!account?.address) {
         alert("Please connect your wallet first.");
         return;
@@ -35,12 +35,27 @@ export default function Home() {
         const contract = getContract({
           client,
           address: "0x3FE0FB34460BB90C86CeF7095c79aae9ffe3ef4D",
-          chain: sepolia,
+          chain: abstractTestnet,
         });
 
-        //@ts-expect-error: Should expect error
-        await contract.claim(1); // Minting 1 NFT
-        console.log(`Minted NFT with Token ID: ${tokenId}`);
+        const transaction = mintTo({
+          contract,
+          to: account?.address,
+          supply: BigInt(1),
+          nft: {
+            name: "merheb",
+            description: "just a doggo",
+            image: "ipfs://QmUeeTjEgphDGyhWodnrSzPrbPGeMxUsnMwyqPe9Qp5AZ1/0.png",
+          },
+        });
+        
+        const { transactionHash } = await sendTransaction({
+          account,
+          transaction,
+        });
+
+        console.log(transactionHash)
+        //console.log(`Minted NFT with Token ID: ${tokenId}`);
     } catch (error) {
         console.error("Minting failed:", error);
         alert("Minting failed. See console for details.");
@@ -51,7 +66,7 @@ export default function Home() {
   return (
    <div>
      <div className="header">
-        <h1>Welcome to the &quot;Need a Cure?&quot; NFT Collection</h1>
+        <h1 className="md:text-4xl text-lg">Welcome to the &quot;Need a Cure?&quot; NFT Collection</h1>
         <ConnectButton wallets={wallets} client={client} />
     </div>
 
@@ -60,7 +75,7 @@ export default function Home() {
             <Image src="/images/bodoggo.png" alt="NFT 1" height={500} width={500} />
             <h3>merheb</h3>
             <p>just a doggo</p>
-            <button className="mint-button" onClick={() => mintNFT(0)}>Mint NFT</button>
+            <button className="mint-button" onClick={() => mintNFT()}>Mint NFT</button>
         </div>
         <div className="nft-card">
             <Image src="/images/absdoggo.png" alt="NFT 2" height={500} width={500} />
